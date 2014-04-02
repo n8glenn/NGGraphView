@@ -10,6 +10,14 @@
 #import "NGDataPoint.h"
 #import <CoreText/CoreText.h>
 
+#define NG_X_OFFSET 40
+#define NG_Y_OFFSET 40
+#define NG_POINT_INSET 20
+#define NG_DATE_FORMAT @"MM/dd/yyyy"
+#define NG_DATE_TIME_FORMAT @"MM/dd/yyyy hh:mm a"
+#define NG_SHORT_DATE_FORMAT @"MMM dd"
+#define NG_GRAPH_DOT_SIZE 8
+
 @implementation NGGraphView
 
 @synthesize title=_title;
