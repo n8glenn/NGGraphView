@@ -7,19 +7,16 @@
 Pod::Spec.new do |s|
   s.name             = "NGGraphView"
   s.version          = "0.1.0"
-  s.summary          = "A short description of NGGraphView."
+  s.summary          = "A simple graph view for iOS."
   s.description      = <<-DESC
-                       An optional longer description of NGGraphView
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       NGGraphView allows you to show how data changes over time using a graph.
                        DESC
-  s.homepage         = "http://EXAMPLE/NAME"
-  s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  #s.homepage         = "http://EXAMPLE/NAME"
+  #s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Nate Glenn" => "n8glenn@gmail.com" }
-  s.source           = { :git => "http://EXAMPLE/NAME.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/EXAMPLE'
+  s.source           = { :git => "http://www.github.com/n8glenn/NGGraphView.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/n8glenn'
 
   # s.platform     = :ios, '5.0'
   # s.ios.deployment_target = '5.0'
@@ -32,6 +29,5 @@ Pod::Spec.new do |s|
   s.ios.exclude_files = 'Classes/osx'
   s.osx.exclude_files = 'Classes/ios'
   # s.public_header_files = 'Classes/**/*.h'
-  # s.frameworks = 'SomeFramework', 'AnotherFramework'
-  # s.dependency 'JSONKit', '~> 1.4'
+  s.frameworks = 'CoreText', 'CoreGraphics', 'UIKit', 'Foundation'
 end
