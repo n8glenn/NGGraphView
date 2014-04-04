@@ -14,14 +14,14 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '7.0'
   s.ios.deployment_target = '7.0'
-  # s.osx.deployment_target = '10.7'
+  s.osx.deployment_target = '10.7'
   s.requires_arc = true
 
   s.source_files = 'Classes/ios/NGGraphView.{h, m}', 'Classes/ios/NGDataPoint.{h, m}', 'Classes/ios/NGConstants.h'
   #s.resources = 'Assets/*.png'
 
   s.ios.exclude_files = 'Classes/osx'
-  # s.osx.exclude_files = 'Classes/ios'
-  # s.public_header_files = 'Classes/**/*.h'
-  s.frameworks = 'CoreText', 'CoreGraphics', 'UIKit', 'Foundation' 
+  s.osx.exclude_files = 'Classes/ios'
+  s.public_header_files = 'Classes/**/*.h'
+  s.frameworks = { 'CoreText', 'CoreGraphics', 'UIKit', 'Foundation' } 
 end
