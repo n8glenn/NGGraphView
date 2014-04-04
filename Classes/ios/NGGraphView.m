@@ -8,6 +8,7 @@
 
 #import "NGGraphView.h"
 #import "NGDataPoint.h"
+#import "NGConstants.h"
 #import <CoreText/CoreText.h>
 
 #define NG_X_OFFSET 40
