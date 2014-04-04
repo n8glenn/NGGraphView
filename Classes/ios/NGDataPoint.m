@@ -7,6 +7,7 @@
 //
 
 #import "NGDataPoint.h"
+#import <Foundation/Foundation.h>
 
 @implementation NGDataPoint
 
