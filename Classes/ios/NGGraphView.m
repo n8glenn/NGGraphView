@@ -53,16 +53,28 @@
         if ([dp count] > _maxValue) _maxValue = [dp count];
         if ([dp count] < _minValue) _minValue = [dp count];
     }
-    
+
     _displayTotal = _maxValue - _minValue;
     
     if (_displayTotal < 5)
     {
-        _displayIncrement = 1;
+        _localDisplayIncrement = 1;
     }
     else
     {
-        if (_displayIncrement == 0) _displayIncrement = 5;
+        if (_displayIncrement == 0)
+        {
+            _localDisplayIncrement = 5;
+        }
+        else
+        {
+            _localDisplayIncrement = _displayIncrement;
+        }
+        
+        if ((_displayTotal % _localDisplayIncrement) > 0)
+        {
+            _displayTotal = _displayTotal + (_localDisplayIncrement -(_displayTotal % _localDisplayIncrement));
+        }
     }
     if ([_dataPoints count] < 2)
     {
@@ -111,7 +123,7 @@
     
     // create lines to show amount of behaviors
     CGContextSetLineWidth(ctx, 0.5);
-    //for (int i = 0; i <= _displayTotal; i = i + _displayIncrement)
+    //for (int i = 0; i <= _displayTotal; i = i + _localDisplayIncrement)
     //{
     //    CGContextMoveToPoint(ctx, X_OFFSET, (i * _yfactor) + Y_OFFSET);        
     //    CGContextAddLineToPoint(ctx, X_OFFSET + 10, (i * _yfactor) + Y_OFFSET);
@@ -123,15 +135,15 @@
         {
             _segments = 5;
         }
-        _displayIncrement = _displayTotal / _segments;
-        if (_displayIncrement < 1) _displayIncrement = 1;
+        _localDisplayIncrement = _displayTotal / _segments;
+        if (_localDisplayIncrement < 1) _localDisplayIncrement = 1;
         
         // show total amount of behaviors.
         if (_displayTotal > 0)
         {
-            for (int i = 0; i <= _displayTotal; i = i + _displayIncrement)
+            for (int i = 0; i <= _displayTotal; i = i + _localDisplayIncrement)
             {
-                if (i % _displayIncrement == 0)
+                if (i % _localDisplayIncrement == 0)
                 {
                     float offset;
                     if (i > 99)
@@ -153,7 +165,7 @@
                 }
             }
             
-            if (_displayTotal % _displayIncrement != 0)
+            if (_displayTotal % _localDisplayIncrement != 0)
             {
                 float offset = 25.0;
                 if (_displayTotal > 9)
@@ -173,13 +185,13 @@
         
         if (_displayTotal > 0)
         {
-            for (int i = 0; i <= _displayTotal; i = i + _displayIncrement)
+            for (int i = 0; i <= _displayTotal; i = i + _localDisplayIncrement)
             {
                 CGContextMoveToPoint(ctx, X_OFFSET + 10, (self.frame.size.height - Y_OFFSET) - (i * _yfactor));
                 CGContextAddLineToPoint(ctx, self.frame.size.width - X_OFFSET, (self.frame.size.height - Y_OFFSET) - (i * _yfactor));
                 CGContextStrokePath(ctx);
             }
-            if (_displayTotal % _displayIncrement != 0)
+            if (_displayTotal % _localDisplayIncrement != 0)
             {
                 CGContextMoveToPoint(ctx, X_OFFSET, Y_OFFSET);        
                 CGContextAddLineToPoint(ctx, self.frame.size.width - X_OFFSET, Y_OFFSET);

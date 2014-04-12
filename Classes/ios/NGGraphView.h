@@ -23,6 +23,7 @@
     NSMutableArray *_dataPoints;
     int _displayTotal;
     int _displayIncrement;
+    int _localDisplayIncrement;
     NSArray *_linePoints;
     int _maxValue;
     int _minValue;
