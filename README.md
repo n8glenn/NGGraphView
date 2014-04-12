@@ -3,7 +3,7 @@ NGGraphView
 
 Simple graphing view.
 
-![DemoGif](http://cl.ly/image/2b0q342D3c0j)
+![DemoGif](http://cl.ly/UxEx/graph.gif)
 
 ## Requirement
 - ARC.
