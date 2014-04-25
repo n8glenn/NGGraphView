@@ -11,11 +11,11 @@
 @interface NGDataPoint : NSObject
 {
     NSString *_label;
-    int _count;
+    int _itemCount;
 }
 
 @property (nonatomic, retain) NSString *label;
-@property (nonatomic) int count;
+@property (nonatomic, readwrite) int itemCount;
 
 + (id)withLabel:(NSString *)itemLabel andCount:(int)itemCount;
 

@@ -12,19 +12,19 @@
 @implementation NGDataPoint
 
 @synthesize label=_label;
-@synthesize count=_count;
+@synthesize itemCount=_itemCount;
 
 + (id)withLabel:(NSString *)itemLabel andCount:(int)itemCount;
 {
     NGDataPoint *dp = [[NGDataPoint alloc] init];
     [dp setLabel:itemLabel];
-    [dp setCount:itemCount];
+    [dp setItemCount:itemCount];
     return dp;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Label = %@, Count = %d", _label, _count];
+    return [NSString stringWithFormat:@"Label = %@, Count = %d", _label, _itemCount];
 }
 
 @end
