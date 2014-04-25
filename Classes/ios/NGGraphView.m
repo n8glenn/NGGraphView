@@ -90,7 +90,7 @@
     for (int i = 0; i < [self.dataPoints count]; i++)
     {
         CGFloat x_value = (i * _xfactor) + NG_X_OFFSET + NG_POINT_INSET;
-        CGFloat y_value = (self.frame.size.height - (NG_Y_OFFSET * 2)) - (([(NGDataPoint *)[_dataPoints objectAtIndex:i] itemCount]) * _yfactor);
+        CGFloat y_value = (self.frame.size.height - (NG_Y_OFFSET * 2)) - ((((NGDataPoint *)[_dataPoints objectAtIndex:i]).itemCount) * _yfactor);
         [points addObject:[NSValue valueWithCGPoint:CGPointMake(x_value, y_value)]];
     }
     
